@@ -1,0 +1,11 @@
+@import '../../fonts/style.scss';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 390px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}

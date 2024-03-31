@@ -1,0 +1,76 @@
+@import '../../fonts/style.scss';
+
+.item {
+  @include basic-item-row;
+  list-style-type: none;
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.name {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.infoName {
+  display: flex;
+  gap: 8px;
+  // min-width: 240px;
+  align-items: center;
+}
+
+.text {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1,5;
+  margin-top: 16px;
+}
+
+.span {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 1,5;
+}
+
+.greyText {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 2;
+  color: $grey-border-color;
+}
+
+.cashBackItem {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: start;
+  gap: 24px;
+}
+
+.button {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+  color: $dark-yellow-item-color;
+  text-decoration-line: none;
+}

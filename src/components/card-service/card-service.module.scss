@@ -1,0 +1,63 @@
+@import '../../fonts/style.scss';
+
+.item {
+  @include basic-item-small;
+  background-color: $yellow-background-color;
+  // width: 100%;
+  min-height: 80px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.itemGrey {
+  background-color: $grey-item-color;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+  margin-left: 8px;
+  max-width: 155px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.description {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+  margin-left: 8px;
+  color: $grey-text-color;
+  max-width: 155px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cashBackItem {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.upFront {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  gap: 4px;
+  align-items: center;
+}

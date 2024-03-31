@@ -1,0 +1,62 @@
+@import '../../fonts/style.scss';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 390px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.itemButton {
+  @include basic-item-row;
+}
+
+.rules {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
+  color: $grey-text-color;
+}
+
+.contaner {
+  @include basic-item-large;
+  box-shadow: none;
+}
+
+.button {
+  border: none;
+  background-color: $color_white;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.description {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+}
+
+.h {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+}
+
+.p {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1,5;
+}

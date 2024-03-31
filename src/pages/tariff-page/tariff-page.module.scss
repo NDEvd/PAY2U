@@ -1,0 +1,54 @@
+@import '../../fonts/style.scss';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 390px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contaner {
+  @include basic-item-large;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+}
+
+.search {
+  @include basic-item-small;
+  background-color: transparent;
+  min-width: 100%;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  border: 1px solid $yellow-item-color;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  color: $dark-yellow-item-color;
+  border: none;
+}

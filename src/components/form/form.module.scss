@@ -1,0 +1,151 @@
+@import '../../fonts/style.scss';
+
+.form {
+  @include basic-item-large;
+  gap: 0;
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.label {
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $grey-text-color;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid $grey-border-color;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+.span {
+  min-height: 16px;
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: brown;
+}
+
+.sliderCheckbox {
+  width: 100%;
+  position: relative;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  width: auto;
+  margin-bottom: 18px;
+}
+
+.switchInput {
+  display: none;
+}
+
+.switchSlider {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  height: 26px;
+  width: 48px;
+  background-color: $grey-item-color;
+  border-radius: 24px;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.switchSlider::before {
+  content: '';
+  position: absolute;
+  cursor: pointer;
+  left: 2px;
+  bottom: 2px;
+  height: 22px;
+  width: 22px;
+  background-color: $color_white;
+  border-radius: 50%;
+}
+
+.switchInput:checked + .switchSlider {
+  background-color: #FFEB3B;
+}
+
+.switchInput:checked + .switchSlider::before {
+  transform: translateX(22px);
+}
+
+.textSlider {
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.checkbox {
+  margin-top: 12px;
+  min-height: 28px;
+  align-items: center;
+}
+
+.textCheckbox {
+  font-family: "SF Pro Text";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 4px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.textCheckbox::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: $grey-item-color;
+}
+
+.checkboxInput:checked + .textCheckbox::before {
+  content: url(../../images/check.svg);
+  background-color: #FFEB3B;
+}
+
+.button {
+  @include basic-item-small;
+  background-color: $yellow-item-color;
+  min-width: 100%;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  max-width: 224px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}

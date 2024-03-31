@@ -1,0 +1,12 @@
+@import '../../fonts/style.scss';
+
+.arrow {
+  border: none;
+  background-color: $color_white;
+  align-self: self-start;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

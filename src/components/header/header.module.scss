@@ -1,0 +1,23 @@
+@import '../../fonts/style.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  gap: 4px;
+  align-items: center;
+}
+
+.textBack {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,2;
+  color: $grey-text-color;
+}

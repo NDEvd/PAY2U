@@ -1,0 +1,17 @@
+@import '../../fonts/style.scss';
+
+.button {
+  @include basic-item-small;
+  background-color: $yellow-item-color;
+  min-width: 100%;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  max-width: 224px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  // align-self: flex-end;
+}

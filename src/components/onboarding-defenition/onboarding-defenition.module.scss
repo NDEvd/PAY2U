@@ -1,0 +1,22 @@
+.ul {
+  list-style-image: url(../../images/done.svg);
+  line-height: 24px;
+  margin-left: 0;
+  list-style-position: inside;
+  align-self: flex-start;
+}
+
+.li::marker {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+}
+
+.text {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 2;
+  align-self: flex-start;
+}

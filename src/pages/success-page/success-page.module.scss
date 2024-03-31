@@ -1,0 +1,40 @@
+@import '../../fonts/style.scss';
+
+.item {
+  @include basic-item-large;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.promo {
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid $grey-item-color;
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.textPromo {
+  font-family: "SF Pro Text", Arial;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.copy {
+  border: 1px solid $yellow-item-color;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}

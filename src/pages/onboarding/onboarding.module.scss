@@ -1,0 +1,95 @@
+@import '../../fonts/style.scss';
+// @import '../../fonts/font.css';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 390px;
+  background-color: $yellow-background-color;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 60px;
+  min-height: 844px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.topButton {
+  border: 1px solid $yellow-item-color;
+  border-radius: 12px;
+  background-color: $yellow-background-color;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  right: 0;
+  max-width: 106px;
+  height: 28px;
+  text-align: center;
+  align-self: flex-end;
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-bottom: 24px;
+}
+
+.progress {
+  border: none;
+  width: 280px;
+  height: 4px;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: $grey-border-color;
+}
+
+.progress::-webkit-progress-value {
+  background-color: $yellow-item-color;
+}
+
+.span {
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+.title {
+ margin-bottom: 12px;
+}
+
+.image {
+  width: 348px;
+  height: 349px;
+  margin-bottom: 44px;
+}
+
+.textM {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  max-width: 224px;
+  text-align: center;
+}
+
+.textS {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.closeButton {
+  border: none;
+  margin-bottom: 36px;
+  align-self: flex-end;
+  background-color: transparent;
+}
+
+.lastElement {
+  margin-top: auto;
+  width: 100%;
+}

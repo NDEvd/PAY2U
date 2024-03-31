@@ -1,0 +1,73 @@
+@import '../../fonts/style.scss';
+
+.bg {
+  background-image: url('../../images/Vector\ 2.svg');
+  background-color: $color_grey_light;
+  min-height: 100vh;
+  width: 390px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.topItem {
+  @include basic-item-small;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-top: 16px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  gap: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  background-color: $color_white;
+}
+
+.sum {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 1,5;
+}
+
+.date {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1,5;
+  margin-bottom: 8px;
+}
+
+.upFront {
+  border: none;
+  background-color: transparent;
+}
+
+.buttonSinhron {
+  @include basic-item-small;
+  min-width: 100%;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: $yellow-item-color;
+  margin-bottom: 4px;
+}

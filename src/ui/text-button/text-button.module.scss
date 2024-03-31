@@ -1,0 +1,14 @@
+@import '../../fonts/style.scss';
+
+.link {
+  color: $dark-yellow-item-color;
+  text-decoration: none;
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
