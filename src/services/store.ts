@@ -1,14 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import ingredientSlice from './test';
+import servicesSlice from './slices';
 
 import {
-  TypedUseSelectorHook,
   useDispatch as dispatchHook,
   useSelector as selectorHook
 } from "react-redux";
 
+import type {TypedUseSelectorHook} from "react-redux";
+
 const rootReducer = combineReducers({
-  ingredients: ingredientSlice,
+  services: servicesSlice,
 });
 
 const store = configureStore({

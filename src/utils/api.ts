@@ -1,6 +1,6 @@
 import { TServices, TSubscriptions, TTariff } from './types';
 
-const URL = 'https:___________';
+const URL = 'https://dfter123.pythonanywhere.com';
 
 const checkResponse = <T>(res: Response): Promise<T> =>
   res.ok ? res.json() : res.json().then((err) => Promise.reject(err));

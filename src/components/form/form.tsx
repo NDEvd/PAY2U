@@ -26,8 +26,7 @@ export const Form: FC = () => {
     }
   });
 
-  const onSubmit: SubmitHandler<TFormField> = (data) => {
-    console.log(data.name);
+  const onSubmit: SubmitHandler<TFormField> = () => {
     navigate(`/main/tariff/${id}/success`);
     reset();
   }

@@ -1,11 +1,10 @@
 import { FC, useState } from 'react';
 import { useNavigate , Link } from 'react-router-dom';
-import { servicies, subscription } from '../../utils/const';
+import { subscription, servicies } from '../../utils/const';
 import { CardService } from '../card-service/card-service';
 
 import styles from './tabs-servises.module.scss';
 import arrow from '../../images/Component 1.svg';
-
 
 export const TabsServises: FC = () => {
   const [isActive, setIsActive] = useState<string>('tab-one');
@@ -18,10 +17,11 @@ export const TabsServises: FC = () => {
 return (
   <section data-tab>
     <div className={styles.tabs}>
-      <a href="#" data-trigger-tab="tab-one"
+      <a href="http://localhost:5173/#/main?tab=one" data-trigger-tab="tab-one"
         className={`${styles.tab} ${isActive === 'tab-one' ? styles.activeTab : ''}`}
-        onClick={() => handlClick('tab-one')}>Мои</a>
-      <a href="#" data-trigger-tab="tab-two"
+        onClick={() => handlClick('tab-one')}
+          >Мои</a>
+      <a href="http://localhost:5173/#/main?tab=two" data-trigger-tab="tab-two"
         className={`${styles.tab} ${isActive === 'tab-two' ? styles.activeTab : ''}`}
         onClick={() => handlClick('tab-two')}>Каталог</a>
       <Link className={styles.search} to='/search' />
@@ -31,8 +31,9 @@ return (
         <div className={`${styles.tabPane} ${styles.active}`}>
           <h1 className={styles.title}>Активные подписки</h1>
           <ul className={styles.ul}>
-            {subscription.map(({ name, logo, price, cashBack, id }) => (
+            {subscription.map(({ name, logo, price, cashBack, id, isDirect }) => (
             <CardService
+              isDirect={isDirect}
               isActive={isActive}
               name={name}
               logo={logo}
@@ -67,7 +68,6 @@ return (
           <button className={styles.buttonAll}>Смотреть все</button>
         </div>
       </div>
-    {/* </div> */}
   </section>
 );
 }

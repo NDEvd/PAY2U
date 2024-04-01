@@ -11,8 +11,11 @@ import imgStepOne from '../../images/image_onboarding1.png';
 import imgStepTwo from '../../images/image_onboarding2.png';
 import imgStepThree from '../../images/Image_onboarding3.png';
 import { CashbackInfo } from '../../pages/cashback-info/cashback-info';
+import { BankApp } from '../../pages/bank-app/bank-app';
 
 function App() {
+ 
+
   const navigate = useNavigate();
 
   const handleClickFirstPage = () => {
@@ -29,7 +32,7 @@ function App() {
 
   return (
     <Routes>
-        {/* <Route path='/' element={<BankApp />} /> */}
+        <Route path='/' element={<BankApp />} />
         
         <Route path='/onboarding1st' element={
           <Onboarding

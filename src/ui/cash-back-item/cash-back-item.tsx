@@ -6,7 +6,8 @@ type CashbackItemProps = {
   sum: string | number;
   unit: string;
 }
-export const CashbackItem: FC<CashbackItemProps> = ({ sum, unit }) => {
+export const CashbackItem: FC<CashbackItemProps> = ({ sum, unit }) => 
+{
   
   return (
     <div className={styles.item}>
