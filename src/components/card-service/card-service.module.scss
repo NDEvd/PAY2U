@@ -21,6 +21,12 @@
   align-items: center;
 }
 
+.nameItem {
+  display: flex;
+  max-width: 161px;
+  gap: 8px;
+}
+
 .name {
   font-family: 'SF Pro Text', Arial;
   font-weight: 600;
@@ -28,7 +34,7 @@
   font-style: normal;
   line-height: 1,5;
   margin-left: 8px;
-  max-width: 155px;
+  max-width: 145px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

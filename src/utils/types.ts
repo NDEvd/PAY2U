@@ -3,18 +3,18 @@ export type TServices = {
   name: string,
   logo: string,
   price: number,
-  cashBack: string,
+  cashBack: number,
   fromServis?: boolean,
 }
 
 export type TSubscriptions = {
-  id: 1,
+  id: number,
   name: string,
   logo: string,
   price: number,
-  cashback: number,
-  is_active: boolean,
-  is_direct: boolean,
+  cashBack: number,
+  isActive: boolean,
+  isDirect: boolean,
 }
 
 export type TTariff = {

@@ -7,8 +7,6 @@ import { TabsServises } from '../../components/tabs-servises/tabs-servises';
 import { MainButton } from '../../ui/main-button/main-button';
 import { Outlet } from 'react-router-dom';
 
-// import store, { useSelector, useDispatch } from '../../services/store';
-
 export const MainPage: FC = () => {
   
   return (

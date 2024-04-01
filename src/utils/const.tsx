@@ -1,4 +1,4 @@
-import { TServices, TTariff} from './types';
+import { TServices, TSubscriptions, TTariff} from './types';
 import logo from '../images/image 23001.svg';
 
 export const servicies: TServices[] = [
@@ -7,48 +7,51 @@ export const servicies: TServices[] = [
     name: 'Яндекс Практикум',
     logo: logo,
     price: 200,
-    cashBack: '5',
+    cashBack: 5,
   },
   {
     id: 2,
     name: 'Иви',
     logo: logo,
     price: 290,
-    cashBack: '7',
+    cashBack: 7,
   },
   {
     id: 3,
     name: 'Megogo',
     logo: logo,
     price: 1,
-    cashBack: '10',
+    cashBack: 10,
   }
 ]
 
-export const subscription: TServices[] = [
+export const subscription: TSubscriptions[] = [
   {
     id: 11,
     name: 'Test 1',
     logo: logo,
     price: 200,
-    cashBack: '5',
-    fromServis: true,
+    cashBack: 5,
+    isActive: true,
+    isDirect: false,
   },
   {
     id: 12,
     name: 'Test 2',
     logo: logo,
     price: 290,
-    cashBack: '7',
-    fromServis: true,
+    cashBack: 5,
+    isActive: true,
+    isDirect: true,
   },
   {
     id: 13,
     name: 'Test 3',
     logo: logo,
     price: 1,
-    cashBack: '10',
-    fromServis: true,
+    cashBack: 10,
+    isActive: true,
+    isDirect: true,
   }
 ]
 
