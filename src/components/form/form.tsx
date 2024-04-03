@@ -37,8 +37,8 @@ export const Form: FC = () => {
   },[])
 
   return (
-    <form action="" onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <label htmlFor="name" className={styles.label}>
+    <form action='' onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <label htmlFor='name' className={styles.label}>
         ФИО
       </label>
       <input
@@ -53,11 +53,11 @@ export const Form: FC = () => {
           },
         })} 
         placeholder='ФИО'
-        type="text"
+        type='text'
       />
       <span className={styles.span}>{errors && errors.name && errors.name.message}</span>
 
-      <label htmlFor="phone" className={styles.label}>
+      <label htmlFor='phone' className={styles.label}>
         Номер телефона
       </label>
       <input 
@@ -71,20 +71,18 @@ export const Form: FC = () => {
           },
         })}
         placeholder='+7 (916) 123-45-67'
-        type="text" 
+        type='text' 
       />
       <span className={styles.span}>{errors && errors.phone && errors.phone.message}</span>
-
-      <label htmlFor="phone" className={styles.label}>
+      <label htmlFor='phone' className={styles.label}>
         Способ оплаты
       </label>
       <input
         className={`${styles.label} ${styles.input}`}
         { ...register('pay')}
-        type="text" 
+        type='text' 
       />
-      <span className={styles.span}></span>
-
+      <span className={styles.span} />
       <div className={styles.sliderCheckbox}>
         <label className={styles.switch}
           htmlFor='extension' >Автопродление
@@ -94,10 +92,9 @@ export const Form: FC = () => {
             id='extension'
             {...register('extension')}
           />
-          <span className={styles.switchSlider}></span>
+          <span className={styles.switchSlider} />
         </label>  
       </div>
-
       <TextButton text='Правила партнера' link='' />
       <div className={styles.checkbox}>
         <input
@@ -113,7 +110,6 @@ export const Form: FC = () => {
         </label>
       </div>
       <span className={styles.span}> {errors.rulesOne ? errors.rulesOne.message : ''}</span>
-
       <TextButton text='Политика обработки ПД' link='' />
       <div className={styles.checkbox}>
         <input
@@ -129,8 +125,7 @@ export const Form: FC = () => {
         </label> 
       </div>
       <span className={styles.span}> {errors.rulesTwo ? errors.rulesTwo.message : ''}</span>
-
       <button className={styles.button} type='submit'>Перейти к оплате</button>
-      </form>
+    </form>
   );
 }

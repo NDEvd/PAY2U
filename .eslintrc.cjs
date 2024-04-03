@@ -31,13 +31,11 @@ module.exports = {
       }
     }
   },
-  // rules: {
-  //   'react-refresh/only-export-components': [
-  //     'warn',
-  //     { allowConstantExport: true },
-  //   ],
-  // },
   "rules": {
+    'react-refresh/only-export-components': [
+          'warn',
+          { allowConstantExport: true },
+        ],
     "no-unused-vars": [
       "error",
       {

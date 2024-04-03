@@ -7,7 +7,7 @@ export const ArrowBackButton: FC = () => {
   const navigate = useNavigate();
   return (
     <button className={styles.arrow} onClick={() => {navigate(-1)}}>
-      <img src={arrow} alt="стрелка назад" />
+      <img className={styles.arrowImg} src={arrow} alt='стрелка назад' />
     </button>
   );
 }

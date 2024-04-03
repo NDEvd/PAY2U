@@ -21,17 +21,18 @@ export const FinishTariffPage: FC = () => {
         monthPrice={tariffTest.monthPrice}
         period={tariffTest.period}
         cashBack={tariffTest.cashBack}
-        lastStep={true}
+        lastStep
         paymentStep={false}
       />
       <div className={styles.itemButton}>
         <h2 className={styles.rules} >Условия начисления кешбека</h2>
-        <button className={styles.button} onClick={() => {navigate(`/service/tariff/${id}/cashbackinfo`)}}>
-          <img className={styles.rotate} src={arrow} alt="стрелка" />
+        {/* <button className={styles.button} onClick={() => {navigate(`/service/tariff/${id}/cashbackinfo`)}}> */}
+        <button className={styles.button} onClick={() => {navigate(`/error`)}} > 
+          <img className={styles.rotate} src={arrow} alt='стрелка' />
         </button>
       </div>
       <p className={`${styles.contaner} ${styles.description}`}>{tariffTest.description}</p>
-      <div className={styles.contaner}>
+      <div className={styles.contaner} >
         <h2 className={styles.h}>Условия подключения прямой подписки</h2>
         <p className={styles.p}>При подключении прямой подписки действующая подписка останавливается, оплаченный период добавляется к новой подписке.</p>
       </div>

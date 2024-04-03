@@ -7,12 +7,9 @@ type CashbackItemProps = {
   unit: string;
 }
 export const CashbackItem: FC<CashbackItemProps> = ({ sum, unit }) => 
-{
-  
-  return (
+(
     <div className={styles.item}>
-        <img src={crown} alt="корона" />
+        <img src={crown} alt='корона' />
         <span className={styles.crownItemTetx}>{`${sum} ${unit}`}</span>
     </div>
-  );
-}
+  )

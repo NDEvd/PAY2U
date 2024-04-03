@@ -11,7 +11,7 @@ export const SuccessPage: FC = () => {
   
   return (
     <div className={styles.item}>
-      <img src={img} alt="успех" />
+      <img src={img} alt='успех' />
       <div className={styles.promo}> 
         <span>1236-AO8PKF8Q</span>
       </div>
