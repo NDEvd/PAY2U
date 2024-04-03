@@ -12,6 +12,13 @@ type TModalProps = {
 };
 
 export const Modal: FC<TModalProps> = ({ title, isTitle, children }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const handlClose = () => {
     navigate('/main/');
   };
@@ -32,10 +39,17 @@ export const Modal: FC<TModalProps> = ({ title, isTitle, children }) => {
   return (
     <>
     <div className={styles.item}>
-      <div className={styles.overlay} onClick={handlClose} role='presentation'/>
+      <div className={styles.overlay}
+        onClick={handlClose}
+        role='presentation'
+      />
       <div className={styles.modal}>
-        {isTitle && <ArrowBackButton />}
-        {isTitle && <Title title={title} />}
+        {isTitle && 
+          <ArrowBackButton />
+        }
+        {isTitle && 
+          <Title title={title} />
+        }
         <div>
           {children}
         </div>

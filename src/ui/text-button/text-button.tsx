@@ -6,9 +6,6 @@ type TLinkButtonProps = {
   text: string;
   link: string;
 }
-export const TextButton: FC<TLinkButtonProps> = ({ text, link }) => {
-  
-  return (
+export const TextButton: FC<TLinkButtonProps> = ({ text, link }) => (
     <Link className={styles.link} to={link}>{text}</Link>
-  );
-}
+  )

@@ -1,6 +1,7 @@
 import { TServices, TSubscriptions, TTariff } from './types';
 
 const URL = 'https://dfter123.pythonanywhere.com';
+const testToken = '7261af576d09e525ec8be9a67bd31b99f214b4ea';
 
 const checkResponse = <T>(res: Response): Promise<T> =>
   res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
@@ -13,8 +14,26 @@ const checkResponse = <T>(res: Response): Promise<T> =>
     data: TServices[];
   }>;
 
+  // export const getOrdersApi = () =>
+  // fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json;charset=utf-8',
+  //     authorization: getCookie('accessToken')
+  //   } as HeadersInit
+  // }).then((data) => {
+  //   if (data?.success) return data.orders;
+  //   return Promise.reject(data);
+  // });
+
   export const getServicesApi = () =>
-  fetch(`${URL}/api/v1/services/ `)
+    fetch(`${URL}/api/v1/services/ `, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Token: testToken,
+      }
+    })
     .then((res) => checkResponse<TServicesResponse>(res))
     .then((data) => {
       if (data?.success) return data;

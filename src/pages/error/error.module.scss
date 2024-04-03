@@ -1,0 +1,54 @@
+@import '../../fonts/style.scss';
+
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 390px;
+  height: 100vh;
+  background-color: $grey-item-color;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $yellow-background-color;
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  position: relative;
+}
+
+.image {
+  width: 228px;
+  height: 149px;
+}
+
+.textM {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  max-width: 224px;
+  text-align: center;
+}
+
+.textS {
+  font-family: 'SF Pro Text', Arial;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.closeButton {
+  border: none;
+  align-self: flex-end;
+  background-color: transparent;
+}

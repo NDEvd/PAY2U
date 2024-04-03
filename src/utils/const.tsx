@@ -6,23 +6,50 @@ export const servicies: TServices[] = [
     id: 1,
     name: 'Яндекс Практикум',
     logo: logo,
-    price: 200,
+    minPrice: 200,
     cashBack: 5,
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
   },
   {
     id: 2,
     name: 'Иви',
     logo: logo,
-    price: 290,
+    minPrice: 290,
     cashBack: 7,
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
   },
   {
     id: 3,
     name: 'Megogo',
     logo: logo,
-    price: 1,
+    minPrice: 1,
     cashBack: 10,
-  }
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
+  },
+  {
+    id: 4,
+    name: 'Яндекс Практикум',
+    logo: logo,
+    minPrice: 200,
+    cashBack: 5,
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
+  },
+  {
+    id: 5,
+    name: 'Иви',
+    logo: logo,
+    minPrice: 290,
+    cashBack: 7,
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
+  },
+  {
+    id: 6,
+    name: 'Megogo',
+    logo: logo,
+    minPrice: 1,
+    cashBack: 10,
+    description: 'Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы и в лучшем качестве.',
+  },
 ]
 
 export const subscription: TSubscriptions[] = [
@@ -52,7 +79,34 @@ export const subscription: TSubscriptions[] = [
     cashBack: 10,
     isActive: true,
     isDirect: true,
-  }
+  },
+  {
+    id: 14,
+    name: 'Test 1',
+    logo: logo,
+    price: 200,
+    cashBack: 5,
+    isActive: true,
+    isDirect: false,
+  },
+  {
+    id: 15,
+    name: 'Test 2',
+    logo: logo,
+    price: 290,
+    cashBack: 5,
+    isActive: false,
+    isDirect: true,
+  },
+  {
+    id: 16,
+    name: 'Test 3',
+    logo: logo,
+    price: 1,
+    cashBack: 10,
+    isActive: false,
+    isDirect: true,
+  },
 ]
 
 export const tariffsTest: TTariff[] = [

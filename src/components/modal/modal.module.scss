@@ -15,6 +15,10 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  max-height: 90vh;
+  scrollbar-width: none;
+  margin-bottom: 30px;
 }
 
 .content {

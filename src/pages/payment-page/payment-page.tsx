@@ -4,9 +4,7 @@ import { tariffTest } from '../../utils/const';
 import { CardTariff } from '../../components/card-tariff/card-tariff';
 import { Form } from '../../components/form/form';
 
-export const PaymentPage: FC = () => {
-  
-  return (
+export const PaymentPage: FC = () => (
     <div className={styles.item}>
       <CardTariff
         logo={tariffTest.logo}
@@ -18,9 +16,8 @@ export const PaymentPage: FC = () => {
         period={tariffTest.period}
         cashBack={tariffTest.cashBack}
         lastStep={false}
-        paymentStep={true}
+        paymentStep
       />
       <Form />
     </div>  
   );
-};

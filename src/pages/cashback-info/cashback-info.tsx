@@ -1,9 +1,7 @@
 import { FC } from 'react';
 import styles from './cashback-info.module.scss';
 
-export const CashbackInfo: FC = () => {
-  
-  return (
+export const CashbackInfo: FC = () => (
     <p className={styles.text}>
       Кэшбэк подтверждается и зачисляется в течение 30 - 60 дней
     Кэшбэк по заказу может отобразиться в течение 3-х дней с момента покупки подписки.
@@ -14,4 +12,3 @@ export const CashbackInfo: FC = () => {
     Кэшбэк распространяется на сумму гарантии по решению сервиса Иви.
     </p>
   );
-};

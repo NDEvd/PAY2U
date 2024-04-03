@@ -1,16 +1,17 @@
 import { FC } from 'react';
 import styles from './tariff-page.module.scss';
+import { useNavigate } from 'react-router-dom';
 import { Title } from '../../ui/title/title';
 import logo from '../../images/image 23001.svg';
 import { tariffsTest } from '../../utils/const';
 import { CardTariff } from '../../components/card-tariff/card-tariff';
 
 export const TariffPage: FC = () => {
-  
+  const navigate = useNavigate();
   return (
     <div className={styles.item}>
       <div className={styles.contaner}>
-        <img src={logo} alt="лого" />
+        <img src={logo} alt='лого' />
         <div className={styles.text}>
           <p>
             Подписка Иви это огромный каталог фильмов и сериалов, доступный без рекламы 
@@ -21,7 +22,9 @@ export const TariffPage: FC = () => {
           </p>
         </div>
       </div>
-      <button className={styles.search}>Найти прямую подписку</button>
+      <button className={styles.search} onClick={() => {navigate(`/error`)}} >
+        Найти прямую подписку
+      </button>
       <Title title='Выбор тарифного плана' />
       <ul className={styles.ul}>
         {tariffsTest.map(( tariffInfo ) => (
@@ -41,7 +44,9 @@ export const TariffPage: FC = () => {
           />
         ))}
       </ul>
-      <button className={`${styles.search} ${styles.link}`}>Перейти на сайт подписки</button>
+      <button className={`${styles.search} ${styles.link}`} onClick={() => {navigate(`/error`)}} >
+        Перейти на сайт подписки
+      </button>
     </div>
   );
 };
