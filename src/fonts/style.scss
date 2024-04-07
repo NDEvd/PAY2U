@@ -1,6 +1,7 @@
 $yellow-background-color: #FFECB3;
 $yellow-item-color: #FFC107;
 $dark-yellow-item-color: #AF8300;
+$light-yellow-item-color: #FFECB3;
 $grey-border-color: #BDBDBD;
 $grey-item-color: #F0F0F0;
 $grey-text-color: #757575;
@@ -12,7 +13,7 @@ $color_white: #ffffff;
   border-radius: 12px;
   padding-top: 12px;
   padding-bottom: 12px;
-
+  box-sizing: border-box;
 }
 
 @mixin basic-item-large {
@@ -24,6 +25,7 @@ $color_white: #ffffff;
   border-radius: 16px;
   background-color: $color_white;
   padding: 16px;
+  box-sizing: border-box;
 }
 
 @mixin basic-item-row {

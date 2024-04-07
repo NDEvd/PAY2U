@@ -5,11 +5,16 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { TFormField } from '../../utils/types';
 import { TextButton } from '../../ui/text-button/text-button';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from '../../services/store';
+import { fetchPayAndGetPromocode } from '../../services/actions';
 
 export const Form: FC = () => {
   const params = useParams();
   const id = params.id;
   const navigate = useNavigate();
+  const dispatch =  useDispatch();
+  const promocodeRequest = useSelector(state => state.services.promocodeRequest);
+  
   const {
     register,
     handleSubmit,
@@ -27,9 +32,13 @@ export const Form: FC = () => {
   });
 
   const onSubmit: SubmitHandler<TFormField> = () => {
-    navigate(`/main/tariff/${id}/success`);
+    if (id) {
+      dispatch(fetchPayAndGetPromocode(id));
+    }
+    promocodeRequest ? navigate(`/main/tariff/${id}/paymentResult`) : navigate(`/paymentError`);
     reset();
   }
+ 
 
   useEffect(() => {
     setValue('name', 'Иванов Иван Иванович');

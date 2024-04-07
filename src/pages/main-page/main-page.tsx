@@ -24,7 +24,7 @@ export const MainPage: FC = () => {
             <p className={styles.date}>Спишется 3 апреля</p>
           </div>
         </div>
-        <MainButton text='Синхронизировать подписки' onClick={() => {navigate(`/error`)}}/>
+        <MainButton text='Синхронизировать подписки' onClick={() => {navigate(`/sync`)}}/>
         <Title title='Актуальное' />
         <Story />
         <Title title='Сервисы' />

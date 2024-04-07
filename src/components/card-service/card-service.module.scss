@@ -15,6 +15,11 @@
   background-color: $grey-item-color;
 }
 
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
 .info {
   display: flex;
   align-items: center;
@@ -53,7 +58,7 @@
   overflow: hidden;
 }
 
-.cashBackItem {
+.cashbackItem {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -65,4 +70,5 @@
   background-color: transparent;
   gap: 4px;
   align-items: center;
+  cursor: pointer;
 }

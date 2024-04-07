@@ -138,6 +138,7 @@
 .button {
   @include basic-item-small;
   background-color: $yellow-item-color;
+  color: black;
   min-width: 100%;
   font-family: 'SF Pro Text', Arial;
   font-weight: 500;

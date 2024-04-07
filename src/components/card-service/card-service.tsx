@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import styles from './card-service.module.scss';
 import up from '../../images/chevron-up.svg';
 import { CashbackItem } from '../../ui/cash-back-item/cash-back-item';
@@ -9,10 +9,11 @@ export type CardServiceProps = {
   id?: number;
   name: string;
   logo: string;
-  price: number;
-  cashBack: number;
+  price: string | number;
+  cashback: string | number;
   fromServis?: boolean;
-  onClick: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  // onClick: () => void;
   isActiveService?:boolean;
   isDirect?: boolean;
 }
@@ -22,13 +23,13 @@ export const CardService: FC<CardServiceProps> = ({
   name,
   logo,
   price,
-  cashBack,
+  cashback,
   onClick,
   isDirect
 }) => (
     <li className={`${styles.item} ${isActiveTab === 'tab-two' ? styles.itemGrey : ''}`}>
       <div className={styles.info}>
-        <img src={logo} alt='лого' />
+        <img className={styles.logo} src={logo} alt='лого' />
         <div>
           <div className={styles.nameItem}>
             <h1 className={styles.name}>
@@ -41,8 +42,8 @@ export const CardService: FC<CardServiceProps> = ({
           </p>
         </div>
       </div>
-      <div className={styles.cashBackItem}>
-        <CashbackItem sum={cashBack} unit='%'/>
+      <div className={styles.cashbackItem}>
+        <CashbackItem sum={cashback} unit='%'/>
         <button className={styles.upFront} onClick={onClick}>
           <img src={up} alt='стрелка вперед' />
         </button>
