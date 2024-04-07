@@ -1,13 +1,16 @@
 import { FC, useState } from 'react';
 import { useNavigate , Link } from 'react-router-dom';
 import { CardService } from '../card-service/card-service';
-import { useSelector } from '../../services/store';
+import { useDispatch, useSelector } from '../../services/store';
+import { fetchTariffList } from '../../services/actions';
 
 import styles from './tabs-servises.module.scss';
 import arrow from '../../images/Component 1.svg';
 
 export const TabsServises: FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [isActiveTab, setIsActiveTab] = useState<string>('tab-one');
   const handlClickTab = (tabId: string) => {
     setIsActiveTab(tabId);
@@ -29,12 +32,17 @@ export const TabsServises: FC = () => {
   }
 
   const allServicies = useSelector(state => state.services.services);
-  const servicies = isOpenAllServices ? allServicies : allServicies.slice(0,3);
+  const servicies = isOpenAllServices ? allServicies : allServicies?.slice(0,3);
 
   const activeSubscriptions = useSelector(state => 
-    state.services.subscriptions).filter(i => i.isActive === true);
+    state.services.subscriptions).filter(i => i.is_active === true);
   const disableSubscriptions = useSelector(state => 
-    state.services.subscriptions).filter(i => i.isActive === false);
+    state.services.subscriptions).filter(i => i.is_active === false);
+
+  const handlClickService = (id: number) => {
+    dispatch(fetchTariffList(id));
+    navigate(`/main/service/${id}`)
+  }
 
 return (
   <section data-tab>
@@ -62,14 +70,14 @@ return (
           </h1>
           { isOpenActiveServices &&
             <ul className={styles.ul}>
-              {activeSubscriptions.map(({ name, logo, price, cashBack, id, isDirect }) => (
+              {activeSubscriptions?.map(({ name, logo, price, cashback, id, is_direct }) => (
               <CardService
                 isActiveTab={isActiveTab}
-                isDirect={isDirect}
+                isDirect={is_direct}
                 name={name}
                 logo={logo}
-                price={price}
-                cashBack={cashBack}         
+                price={price.split('.')[0]}
+                cashback={cashback.split('.')[0]}         
                 key={id}
                 onClick={() => navigate(`/error`)}
               />
@@ -88,14 +96,14 @@ return (
           <h1 className={styles.title}>Неактивные подписки</h1>
         { isOpenDisableServices && 
           <ul className={styles.ul}>
-              {disableSubscriptions.map(({ name, logo, price, cashBack, id, isDirect }) => (
+              {disableSubscriptions?.map(({ name, logo, price, cashback, id, is_direct }) => (
               <CardService
                 isActiveTab='tab-two'
-                isDirect={isDirect}
+                isDirect={is_direct}
                 name={name}
                 logo={logo}
-                price={price}
-                cashBack={cashBack}         
+                price={price.split('.')[0]}
+                cashback={cashback.split('.')[0]}         
                 key={id}
                 onClick={() => navigate(`/error`)}
               />
@@ -112,15 +120,16 @@ return (
       <div id='tab-two'
         data-content-tab className={`${styles.tabPane} ${isActiveTab === 'tab-two' ? styles.active : ''}`}>
         <ul className={styles.ul}>
-          {servicies.map(({ name, logo, minPrice, cashBack, id }) => (
+          {servicies?.map(({ name, logo, min_tariff_price, cashback, id }) => (
           <CardService
             isActiveTab={isActiveTab}
             name={name}
             logo={logo}
-            price={minPrice}
-            cashBack={cashBack}         
+            price={min_tariff_price ? min_tariff_price : 100}
+            cashback={cashback ? cashback : 3}         
             key={id}
-            onClick={() => navigate(`/main/service/${id}`)}
+            // onClick={() => navigate(`/main/service/${id}`)}
+            onClick={() => handlClickService(id)}
           />
           ))}
         </ul>

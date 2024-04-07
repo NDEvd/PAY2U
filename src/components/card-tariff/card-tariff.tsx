@@ -7,12 +7,12 @@ export type CardTariffProps = {
   id?: number,
   logo: string,
   name: string,
-  testPrice: number,
-  testPeriod: number,
-  price: number,
-  period: number,
+  testPrice: string,
+  testPeriod: string,
+  price: string,
+  period: string,
   monthPrice: number,
-  cashBack: number | string,
+  cashBack: string,
   paymentStep: boolean,
   lastStep: boolean,
 }
@@ -33,23 +33,25 @@ export const CardTariff: FC<CardTariffProps> = ({
     <li className={styles.item}>
         <div className={styles.info}>
           <div className={`${lastStep} ? ${styles.infoName} :  ''`} >
-            {(lastStep || paymentStep) && <img src={logo} alt='лого' />}
+            {(lastStep || paymentStep) &&
+              <img className={styles.logo} src={logo} alt='лого' />
+            }
             <h1 className={styles.name}>{name}</h1>
           </div>
           {!paymentStep && 
             <p className={styles.text}>
               <span className={styles.span}>
                 {`${testPrice} ₽`}
-              </span>{`за ${testPeriod} дней`}
+              </span>{` за ${testPeriod}`}
             </p>
           }
           {!paymentStep && 
             <p className={styles.text}>
               далее 
               <span className={styles.span}>
-                {`${price} ₽`}
+                {` ${price} ₽`}
               </span>
-              {`за ${period} дней`}
+              {` за ${period}`}
             </p>
           }
           {paymentStep &&

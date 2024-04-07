@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styles from './bank-app.module.scss';
 import { useNavigate } from 'react-router-dom';
-import imgOne from '../../images/promo-block.svg';
 import imgTwo from '../../images/account-wrapper.svg';
 import imgThree from '../../images/cards.svg';
 import imgFour from '../../images/large.svg';
@@ -15,7 +14,18 @@ export const BankApp: FC = () => {
   return (
     <div className={styles.item}>
       <img src={imgFive} alt='информация о пользователе' />
-      <img src={imgOne} alt='кэшбек' />
+      <section className={styles.promo}>
+        <div className={styles.itemLeft}>
+          <h2 className={styles.itemLeftTextM}>Ваш кешбэк</h2>
+          <span className={styles.itemLeftTextL}>352 ₽</span>
+          <div className={styles.itemLeftButton}>Подробнее</div>
+
+        </div>
+        <div className={styles.itemRight}>
+          <h3 className={styles.itemRightTextS}>Кредитная карта</h3>
+          <span className={styles.itemRightTextM}>до 300 тыс ₽</span>
+        </div>
+      </section>
       <img src={imgTwo} alt='счета и карты' />
       <img src={imgSix} alt='заголовок' />
       <img src={imgThree} alt='продукты' />

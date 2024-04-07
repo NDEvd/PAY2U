@@ -6,6 +6,8 @@ import { FinishTariffPage } from '../../pages/finish-tariff-page/finish-tariff-p
 import { Modal } from '../../components/modal/modal';
 import { PaymentPage } from '../../pages/payment-page/payment-page';
 import { SuccessPage } from '../../pages/success-page/success-page';
+import { SyncPage } from '../../pages/sync-page/sync-page';
+import { PaymentErrorPage } from '../../pages/payment-error/payment-error';
 
 import imgStepOne from '../../images/image_onboarding1.png';
 import imgStepTwo from '../../images/image_onboarding2.png';
@@ -16,24 +18,18 @@ import { Error } from '../../pages/error/error';
 import { useEffect } from 'react';
 
 import { useDispatch } from '../../services/store';
-import { setServices, setSubscriptions } from '../../services/slices';
-import { servicies, subscription } from '../../utils/const';
-
-// import { fetchServices } from '../../services/actions';
+import { fetchServices, fetchSubscriptions } from '../../services/actions';
 
 function App() {
   const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(setSubscriptions(subscription));
-  }, [dispatch])
 
   useEffect(() => {
-    dispatch(setServices(servicies));
-  }, [dispatch])
-  // useEffect(() => {
-  //   dispatch(fetchServices( ));
-  // }, [dispatch])
+    dispatch(fetchSubscriptions());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, []);
  
   const navigate = useNavigate();
 
@@ -104,16 +100,17 @@ function App() {
               <CashbackInfo />
             </Modal>
           } />
-          <Route path='tariff/:id/success' element={
+          <Route path='tariff/:id/paymentResult' element={
             <Modal isTitle title='Подписка оформлена' >
               <SuccessPage />
             </Modal>
-          } />
+          }
+           />
         </Route>   
 
+        <Route path='/sync' element={<SyncPage />} />
         <Route path='/error' element={<Error />} />
-       
-        {/* <Route path='*' element={<NotFound404 />} />  */}
+        <Route path='/paymentError' element={<PaymentErrorPage />} />
 
       </Routes>
   )
