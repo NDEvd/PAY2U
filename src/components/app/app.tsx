@@ -17,11 +17,12 @@ import { BankApp } from '../../pages/bank-app/bank-app';
 import { Error } from '../../pages/error/error';
 import { useEffect } from 'react';
 
-import { useDispatch } from '../../services/store';
+import { useDispatch, useSelector } from '../../services/store';
 import { fetchServices, fetchSubscriptions } from '../../services/actions';
 
 function App() {
   const dispatch = useDispatch();
+  const promo = useSelector(state => state.services.promocodeRequest);
 
   useEffect(() => {
     dispatch(fetchSubscriptions());
@@ -101,17 +102,20 @@ function App() {
             </Modal>
           } />
           <Route path='tariff/:id/paymentResult' element={
-            <Modal isTitle title='Подписка оформлена' >
-              <SuccessPage />
-            </Modal>
+            promo ? (
+              <Modal isTitle title='Подписка оформлена' >
+                <SuccessPage />
+              </Modal>
+            ) : (
+              <Modal isTitle={false} title='' >
+                <PaymentErrorPage />
+              </Modal>
+            )
           }
-           />
-        </Route>   
-
+          />
+        </Route>
         <Route path='/sync' element={<SyncPage />} />
         <Route path='/error' element={<Error />} />
-        <Route path='/paymentError' element={<PaymentErrorPage />} />
-
       </Routes>
   )
 }
