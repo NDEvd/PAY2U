@@ -28,7 +28,7 @@ const initialState: ServicesState = {
     code: '',
     date: '',
   },
-  promocodeRequest: true,
+  promocodeRequest: false,
   error: ''
 };
 
